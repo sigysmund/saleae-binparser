@@ -1,3 +1,10 @@
-all:
+example:
 	gcc -Wall -O3 -o example example_main.c saleae_v2_digital.c mmap.c
 	
+qspi:
+	gcc -Wall -g -O0 -o qspi qspi_main.c saleae_v2_digital.c mmap.c
+
+clean:
+	rm -f example qspi
+
+all: clean qspi
